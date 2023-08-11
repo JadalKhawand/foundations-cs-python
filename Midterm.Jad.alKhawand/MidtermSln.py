@@ -235,6 +235,7 @@ def changePriority(ticket_id):
         data[index][4] = new_priority  # we change the ticket priority
         print("Ticket priority has been succefully changed")
 
+
 def disableTicket(ticket_id):
     index = -1
     for i in range(len(data)):
@@ -255,7 +256,9 @@ def runEvents():
     new_data = []
     event_dates = [tickets[3] for tickets in data]  # all the dates in the data
     # we get both the index i and the value of the date using enumerate function
-    for i, date in enumerate(event_dates):  # https://pythonbasics.org/enumerate/
+    for i, date in enumerate(
+        event_dates
+    ):  # https://pythonbasics.org/enumerate/ get both the index i and the corresponding date from the list event_dates
         if date == getDate():  # we check if it matches the date of today
             index = i  # we assign it to the index
             new_data.append(data[index])  # we add it to the new list
